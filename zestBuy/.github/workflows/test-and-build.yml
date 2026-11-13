@@ -1,0 +1,21 @@
+name: build android app
+on:
+    workflow_dispatch:
+jobs:
+    build-android:
+        runs-on: macos-latest
+        steps:
+            - name: build web app
+              run: |
+                npm build
+            - name: prepare android app
+              run: |
+                ionic cordova prepare android
+            - name: build android app
+              run: |
+                ionic cordova build android --prod
+
+
+
+
+
