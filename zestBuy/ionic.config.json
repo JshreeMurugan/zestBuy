@@ -1,0 +1,7 @@
+{
+  "name": "zestBuy",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular-standalone"
+}
