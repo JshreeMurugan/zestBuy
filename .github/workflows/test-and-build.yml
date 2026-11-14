@@ -9,7 +9,7 @@ jobs:
               uses: actions/checkout@v3
 
             - name: Set up Java
-              uses: actions/setup-java@v3
+              uses: actions/setup-java@v5
               with:
                   distribution: 'Eclipse Adoptium'
                   java-version: '21.0.13' # Adjust to the Java version your project requires
@@ -22,7 +22,7 @@ jobs:
             - name: Install Ionic and Cordova
               run: |
                 npm install -g ionic cordova
-                
+
             - name: Install dependencies
               run: |
                 npm install
