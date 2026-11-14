@@ -7,7 +7,7 @@ jobs:
         steps:
             - name: build web app
               run: |
-                npm build
+                npm run build
             - name: prepare android app
               run: |
                 ionic cordova prepare android
