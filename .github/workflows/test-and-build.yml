@@ -13,7 +13,7 @@ jobs:
               with:
                   distribution: 'temurin'
                   java-version: '21' 
-                  
+
             - name : Verify Java version
               run: java -version
 
@@ -33,6 +33,9 @@ jobs:
             - name: build web app
               run: |
                 npm run build
+            - name: Add Android platform
+              run: | 
+                ionic cordova platform add android
             - name: prepare android app
               run: |
                 ionic cordova prepare android
