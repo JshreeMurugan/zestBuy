@@ -8,12 +8,25 @@ jobs:
             - name: checkout code
               uses: actions/checkout@v3
 
+            - name: Set up Java
+              uses: actions/setup-java@v3
+              with:
+                  distribution: 'Eclipse Adoptium'
+                  java-version: '21.0.13' # Adjust to the Java version your project requires
+
             - name: Set up Node.js
               uses: actions/setup-node@v4
               with:
                   node-version: '22' # Adjust to the Node version your project requires
                   cache: 'npm'
-                  
+            - name: Install Ionic and Cordova
+              run: |
+                npm install -g ionic cordova
+                
+            - name: Install dependencies
+              run: |
+                npm install
+
             - name: build web app
               run: |
                 npm run build
